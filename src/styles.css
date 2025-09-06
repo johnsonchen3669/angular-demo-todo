@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* Import Inter font first */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-gray-600: #1A1A1A;
+  --color-blue: #4EA8DE;
+  --color-gray-400: #333333;
+  --color-gray-200: #D9D9D9;
+  --color-purple: #8284FA;
+  --color-gray-500: #262626;
+  --color-gray-100: #F2F2F2;
+  --color-gray-300: #808080;
+  --color-gray-700: #0D0D0D;
+  --color-blue-dark: #1E6F9F;
+  --color-purple-dark: #5E60CE;
+
+  --font-family-inter: "Inter", -apple-system, "Roboto", "Helvetica", sans-serif;
+}
+
+/* Global font family setup */
+* {
+  font-family: "Inter", -apple-system, "Roboto", "Helvetica", sans-serif;
+}
+
+/* Base styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", -apple-system, "Roboto", "Helvetica", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus management for accessibility */
+*:focus {
+  outline: none;
+}
+
+/* Custom focus styles handled in components */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
