@@ -1,2 +1,90 @@
-<app-header></app-header>
-<router-outlet />
+<div class="min-h-screen bg-gray-600 font-inter">
+  <!-- Header Background -->
+  <div class="w-full h-[200px] bg-gray-700"></div>
+
+  <!-- Main Content Container -->
+  <div class="max-w-[736px] mx-auto px-4 relative">
+    <app-header></app-header>
+    <!-- New Task Input -->
+    <app-add-todo></app-add-todo>
+
+    <!-- Tasks Section -->
+    <div class="flex flex-col gap-6">
+      <!-- Info Header -->
+      <div class="flex justify-between items-end">
+        <!-- Created Tasks -->
+        <div class="flex items-center gap-2">
+          <span class="text-blue font-bold text-sm">已建立任務</span>
+          <div
+            class="flex items-center justify-center px-2 py-0.5 bg-gray-400 rounded-full"
+          >
+            <span class="text-gray-200 font-bold text-xs">0</span>
+          </div>
+        </div>
+
+        <!-- Completed Tasks -->
+        <div class="flex items-center gap-2">
+          <span class="text-purple font-bold text-sm">已完成</span>
+          <div
+            class="flex items-center justify-center px-2 py-0.5 bg-gray-400 rounded-full"
+          >
+            <span class="text-gray-200 font-bold text-xs">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tasks List or Empty State -->
+      <div
+        class="flex flex-col items-center justify-center gap-4 py-16 px-6 border-t border-gray-400 rounded-lg"
+      >
+        <!-- Clipboard Icon -->
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <path
+            d="M35 16H19C17.8954 16 17 16.8954 17 18V38C17 39.1046 17.8954 40 19 40H35C36.1046 40 37 39.1046 37 38V18C37 16.8954 36.1046 16 35 16Z"
+            stroke="#3D4852"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M25 16V12C25 10.8954 25.8954 10 27 10C28.1046 10 29 10.8954 29 12V16"
+            stroke="#3D4852"
+            stroke-width="2"
+            fill="none"
+          />
+          <line
+            x1="21"
+            y1="24"
+            x2="33"
+            y2="24"
+            stroke="#3D4852"
+            stroke-width="2"
+          />
+          <line
+            x1="21"
+            y1="28"
+            x2="33"
+            y2="28"
+            stroke="#3D4852"
+            stroke-width="2"
+          />
+          <line
+            x1="21"
+            y1="32"
+            x2="29"
+            y2="32"
+            stroke="#3D4852"
+            stroke-width="2"
+          />
+        </svg>
+
+        <div class="text-center text-gray-300 text-base leading-[140%]">
+          <div class="font-bold">您尚未建立任何待辦事項</div>
+          <div>建立任務並整理您的待辦清單</div>
+        </div>
+      </div>
+
+      <!-- Tasks List -->
+      <app-todo-list></app-todo-list>
+    </div>
+  </div>
+</div>

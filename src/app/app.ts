@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from './header/header.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { AddTodoComponent } from "./add-todo/add-todo.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [HeaderComponent, TodoListComponent, AddTodoComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected title = 'angular-demo-todo';
