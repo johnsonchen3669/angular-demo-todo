@@ -1,0 +1,53 @@
+/* Hover effects */
+.task-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for task completion */
+.task-completed {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+
+/* Checkbox input styles (replaces previous button checkbox) */
+.checkbox-input {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+}
+
+.checkbox-input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px; /* rounded-full */
+  border: 2px solid var(--color-blue, #4ea8de);
+  background-color: transparent;
+  position: relative;
+}
+
+.checkbox-input[type="checkbox"]:checked {
+  background-color: var(--color-purple-dark, #5e60ce);
+  border-color: transparent;
+}
+
+.checkbox-input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--color-purple, #8284fa);
+  outline-offset: 2px;
+}
+
+/* Small check mark inside checked state */
+.checkbox-input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 0.5rem;
+  height: 0.25rem;
+  border-left: 2px solid var(--color-gray-100);
+  border-bottom: 2px solid var(--color-gray-100);
+  transform: rotate(-45deg);
+  left: 0.45rem;
+  top: 0.4rem;
+}

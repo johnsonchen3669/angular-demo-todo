@@ -1,0 +1,32 @@
+/* Todo App Specific Styles */
+/* Focus states for accessibility */
+input:focus {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
+
+button:focus {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
