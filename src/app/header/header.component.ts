@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css',
   standalone: false,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  logoSrc = 'logo.svg';
+}
