@@ -33,6 +33,7 @@
         </div>
       </div>
 
+      @if(todoListCount() === 0){
       <!-- Tasks List or Empty State -->
       <div
         class="flex flex-col items-center justify-center gap-4 py-16 px-6 border-t border-gray-400 rounded-lg"
@@ -82,9 +83,10 @@
           <div>建立任務並整理您的待辦清單</div>
         </div>
       </div>
-
+      }@else {
       <!-- Tasks List -->
       <app-todo-list></app-todo-list>
+      }
     </div>
   </div>
 </div>
