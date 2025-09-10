@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  standalone: false
+  standalone: false,
 })
 export class App {
-  protected title = 'angular-demo-todo';
+  todoList = [];
+  get todoListCount() {
+    return this.todoList.length;
+  }
 }
