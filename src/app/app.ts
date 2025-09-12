@@ -10,6 +10,10 @@ import { AddTodoComponent } from "./add-todo/add-todo.component";
   styleUrl: './app.css',
 })
 export class App {
-  todoList = signal([]);
+  todoList = signal([
+    { id: 1, name: 'Task 1', completed: false },
+    { id: 2, name: 'Task 2', completed: false },
+    { id: 3, name: 'Task 3', completed: false },
+  ]);
   todoListCount = computed(() => this.todoList().length);
 }

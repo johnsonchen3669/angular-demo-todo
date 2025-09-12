@@ -1,3 +1,5 @@
 <ul class="flex flex-col gap-3">
-  <app-todo-item></app-todo-item>
+  @for (task of tasks(); track task.id) {
+    <li class="group/task" appTodoItem></li>
+  }
 </ul>
