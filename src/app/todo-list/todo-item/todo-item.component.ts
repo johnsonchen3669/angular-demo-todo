@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-todo-item',
+  selector: '[appTodoItem]',
   standalone: false,
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css',
