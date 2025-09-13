@@ -1,3 +1,3 @@
 <ul class="flex flex-col gap-3">
-    <li class="group/task" appTodoItem *ngFor="let task of tasks; trackBy: trackByFn"></li>
+    <li class="group/task" appTodoItem [task]="task" *ngFor="let task of tasks; trackBy: trackByFn"></li>
 </ul>

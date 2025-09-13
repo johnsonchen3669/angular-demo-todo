@@ -8,7 +8,7 @@ import { ITodoItem } from './todo-item/todo-item.model';
   styleUrl: './todo-list.component.css',
 })
 export class TodoListComponent {
-  tasks = [
+  tasks: ITodoItem[] = [
     { id: 1, text: '學習 Angular', completed: false },
     { id: 2, text: '建立待辦清單應用程式', completed: true },
     { id: 3, text: '測試應用程式', completed: false },
