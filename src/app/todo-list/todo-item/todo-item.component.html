@@ -1,7 +1,7 @@
 <div
   class="flex items-start gap-3 p-4 rounded-lg border border-gray-400 bg-gray-500 group-[.completed]/task:border-gray-500 group-[.completed]/task:bg-gray-500"
 >
-  <!-- Checkbox (改成 input) -->
+  <!-- Checkbox -->
   <input
     type="checkbox"
     class="checkbox-input w-6 h-6 rounded-full transition-colors border-2 border-blue"
@@ -12,7 +12,7 @@
   <div
     class="flex-1 text-sm leading-[140%] text-gray-100 group-[.completed]/task:text-gray-300 group-[.completed]/task:line-through"
   >
-    範例任務
+    {{ task().text }}
   </div>
 
   <!-- Delete Button -->

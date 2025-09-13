@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { ITodoItem } from './todo-item/todo-item.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,9 +9,9 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
   styleUrl: './todo-list.component.css',
 })
 export class TodoListComponent {
-  tasks = signal([
-    { id: 1, name: 'Task 1', completed: false },
-    { id: 2, name: 'Task 2', completed: false },
-    { id: 3, name: 'Task 3', completed: false },
+  tasks = signal<ITodoItem[]>([
+    { id: 1, text: 'Task 1', completed: false },
+    { id: 2, text: 'Task 2', completed: false },
+    { id: 3, text: 'Task 3', completed: false },
   ]);
 }
