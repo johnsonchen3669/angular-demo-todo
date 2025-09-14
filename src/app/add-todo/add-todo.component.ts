@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { ITodoItem } from '../todo-list/todo-item/todo-item.model';
 
 @Component({
@@ -9,11 +9,8 @@ import { ITodoItem } from '../todo-list/todo-item/todo-item.model';
 })
 export class AddTodoComponent {
   tempArr = signal<ITodoItem[]>([]);
-  addTodo() {
-    this.tempArr.update((todos) => [
-      ...todos,
-      { id: Date.now(), text: '待辦清單', completed: false },
-    ]);
-    console.log(this.tempArr());
+  addTodo = output<ITodoItem>();
+  onAddTodo() {
+    this.addTodo.emit({ id: Date.now(), text: '待辦清單', completed: false });
   }
 }
