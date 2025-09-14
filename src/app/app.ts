@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ITodoItem } from './todo-list/todo-item/todo-item.model';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,11 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class App {
-  todoList = [
-    { id: 1, text: '學習 Angular', completed: false },
-    { id: 2, text: '建立待辦清單應用程式', completed: true },
-    { id: 3, text: '測試應用程式', completed: false },
-  ];
+  todoList: ITodoItem[] = [];
   get todoListCount() {
     return this.todoList.length;
+  }
+  onAddTodo(newTodo: ITodoItem) {
+    this.todoList = [...this.todoList, newTodo];
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ITodoItem } from '../todo-list/todo-item/todo-item.model';
 
 @Component({
@@ -8,15 +8,14 @@ import { ITodoItem } from '../todo-list/todo-item/todo-item.model';
   styleUrl: './add-todo.component.css',
 })
 export class AddTodoComponent {
-  tempArr: ITodoItem[] = [];
+  @Output() addTodo = new EventEmitter<ITodoItem>();
 
-  addTodo() {
+  onAddTodo() {
     const newTodo: ITodoItem = {
       id: Date.now(),
       text: '待辦清單',
       completed: false,
     };
-    this.tempArr.push(newTodo);
-    console.log(this.tempArr);
+    this.addTodo.emit(newTodo);
   }
 }

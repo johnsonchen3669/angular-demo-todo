@@ -6,7 +6,7 @@
   <div class="max-w-[736px] mx-auto px-4 relative">
     <app-header></app-header>
     <!-- New Task Input -->
-    <app-add-todo></app-add-todo>
+    <app-add-todo (addTodo)="onAddTodo($event)"></app-add-todo>
 
     <!-- Tasks Section -->
     <div class="flex flex-col gap-6">
@@ -86,7 +86,7 @@
 
       <ng-template #tasksListTemplate>
         <!-- Tasks List -->
-        <app-todo-list></app-todo-list>
+        <app-todo-list [tasks]="todoList"></app-todo-list>
       </ng-template>
     </div>
   </div>
