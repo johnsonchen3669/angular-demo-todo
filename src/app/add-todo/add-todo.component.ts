@@ -1,16 +1,18 @@
 import { Component, output, signal } from '@angular/core';
 import { ITodoItem } from '../todo-list/todo-item/todo-item.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-todo',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './add-todo.component.html',
   styleUrl: './add-todo.component.css',
 })
 export class AddTodoComponent {
-  tempArr = signal<ITodoItem[]>([]);
   addTodo = output<ITodoItem>();
+  newTodoText = signal<string>('');
   onAddTodo() {
-    this.addTodo.emit({ id: Date.now(), text: '待辦清單', completed: false });
+    this.addTodo.emit({ id: Date.now(), text: this.newTodoText(), completed: false });
+    this.newTodoText.set('');
   }
 }
