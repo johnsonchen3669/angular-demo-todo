@@ -9,13 +9,14 @@ import { ITodoItem } from '../todo-list/todo-item/todo-item.model';
 })
 export class AddTodoComponent {
   @Output() addTodo = new EventEmitter<ITodoItem>();
-
+  newTodoText = '';
   onAddTodo() {
     const newTodo: ITodoItem = {
       id: Date.now(),
-      text: '待辦清單',
+      text: this.newTodoText,
       completed: false,
     };
     this.addTodo.emit(newTodo);
+    this.newTodoText = '';
   }
 }
