@@ -85,7 +85,7 @@
       </div>
       }@else {
       <!-- Tasks List -->
-      <app-todo-list [tasks]="todoList()"></app-todo-list>
+      <app-todo-list [tasks]="todoList()" (deleteTodo)="onDeleteTodo($event)"></app-todo-list>
       }
     </div>
   </div>

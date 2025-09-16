@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ITodoItem } from './todo-item/todo-item.model';
 
@@ -10,4 +10,9 @@ import { ITodoItem } from './todo-item/todo-item.model';
 })
 export class TodoListComponent {
   tasks = input<ITodoItem[]>();
+  deleteTodo = output<number>();
+  
+  onDeleteTodo(id: number) {
+    this.deleteTodo.emit(id);
+  }
 }

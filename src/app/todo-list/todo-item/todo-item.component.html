@@ -16,7 +16,7 @@
   </div>
 
   <!-- Delete Button -->
-  <button
+  <button (click)="toggleComplete(task().id)"
     class="flex items-center justify-center w-6 h-6 rounded hover:bg-gray-400 transition-colors"
   >
     <svg

@@ -16,4 +16,7 @@ export class App {
   onAddTodo(task: ITodoItem) {
     this.todoList.update((list: ITodoItem[]) => [...list, task]);
   }
+  onDeleteTodo(id: number) {
+    this.todoList.update((list: ITodoItem[]) => list.filter(task => task.id !== id));
+  }
 }
