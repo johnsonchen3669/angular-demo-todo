@@ -12,6 +12,7 @@ export class AddTodoComponent {
   addTodo = output<ITodoItem>();
   newTodoText = signal<string>('');
   onAddTodo() {
+    if (!this.newTodoText().trim()) return;
     this.addTodo.emit({ id: Date.now(), text: this.newTodoText(), completed: false });
     this.newTodoText.set('');
   }

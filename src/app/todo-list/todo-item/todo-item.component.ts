@@ -10,7 +10,13 @@ import { ITodoItem } from './todo-item.model';
 export class TodoItemComponent {
   task = input.required<ITodoItem>();
   deleteItem = output<number>();
+  toggleStatus = output<number>();
+
   toggleComplete(id: number) {
+    this.toggleStatus.emit(id);
+  }
+
+  deleteTask(id: number) {
     this.deleteItem.emit(id);
   }
 }

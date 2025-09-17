@@ -6,6 +6,8 @@
     type="checkbox"
     class="checkbox-input w-6 h-6 rounded-full transition-colors border-2 border-blue"
     aria-label="完成任務"
+    [checked]="task().completed"
+    (click)="toggleComplete(task().id)"
   />
 
   <!-- Task Text -->
@@ -16,7 +18,7 @@
   </div>
 
   <!-- Delete Button -->
-  <button (click)="toggleComplete(task().id)"
+  <button (click)="deleteTask(task().id)"
     class="flex items-center justify-center w-6 h-6 rounded hover:bg-gray-400 transition-colors"
   >
     <svg

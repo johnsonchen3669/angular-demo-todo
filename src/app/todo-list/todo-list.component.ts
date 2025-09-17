@@ -11,8 +11,13 @@ import { ITodoItem } from './todo-item/todo-item.model';
 export class TodoListComponent {
   tasks = input<ITodoItem[]>();
   deleteTodo = output<number>();
+  toggleTodo = output<number>();
   
   onDeleteTodo(id: number) {
     this.deleteTodo.emit(id);
+  }
+
+  onToggleStatus(id: number) {
+    this.toggleTodo.emit(id);
   }
 }

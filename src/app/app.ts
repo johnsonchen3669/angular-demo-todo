@@ -13,10 +13,20 @@ import { ITodoItem } from './todo-list/todo-item/todo-item.model';
 export class App {
   todoList = signal<ITodoItem[]>([]);
   todoListCount = computed(() => this.todoList().length);
+  
   onAddTodo(task: ITodoItem) {
     this.todoList.update((list: ITodoItem[]) => [...list, task]);
   }
+  
   onDeleteTodo(id: number) {
     this.todoList.update((list: ITodoItem[]) => list.filter(task => task.id !== id));
+  }
+  
+  onToggleTodo(id: number) {
+    this.todoList.update((list: ITodoItem[]) => 
+      list.map(task => 
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
   }
 }
