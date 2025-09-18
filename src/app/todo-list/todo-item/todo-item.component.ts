@@ -1,5 +1,6 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { ITodoItem } from './todo-item.model';
+import { TodoService } from '../../todo.service';
 
 @Component({
   selector: '[appTodoItem]',
@@ -8,15 +9,13 @@ import { ITodoItem } from './todo-item.model';
   styleUrl: './todo-item.component.css',
 })
 export class TodoItemComponent {
+  todoService = inject(TodoService);
   task = input.required<ITodoItem>();
-  deleteItem = output<number>();
-  toggleStatus = output<number>();
 
   toggleComplete(id: number) {
-    this.toggleStatus.emit(id);
+    this.todoService.toggleTodo(id);
   }
-
   deleteTask(id: number) {
-    this.deleteItem.emit(id);
+    this.todoService.deleteTodo(id);
   }
 }

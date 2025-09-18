@@ -1,5 +1,5 @@
 <ul class="flex flex-col gap-3">
   @for (task of tasks(); track task.id) {
-    <li class="group/task" appTodoItem [task]="task" [class.completed]="task.completed" (deleteItem)="onDeleteTodo($event)" (toggleStatus)="onToggleStatus($event)"></li>
+    <li class="group/task" appTodoItem [task]="task" [class.completed]="task.completed"></li>
   }
 </ul>

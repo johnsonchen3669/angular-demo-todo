@@ -1,6 +1,6 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TodoItemComponent } from './todo-item/todo-item.component';
-import { ITodoItem } from './todo-item/todo-item.model';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,15 +9,6 @@ import { ITodoItem } from './todo-item/todo-item.model';
   styleUrl: './todo-list.component.css',
 })
 export class TodoListComponent {
-  tasks = input<ITodoItem[]>();
-  deleteTodo = output<number>();
-  toggleTodo = output<number>();
-  
-  onDeleteTodo(id: number) {
-    this.deleteTodo.emit(id);
-  }
-
-  onToggleStatus(id: number) {
-    this.toggleTodo.emit(id);
-  }
+  todoService = inject(TodoService);
+  tasks = this.todoService.todoList;
 }

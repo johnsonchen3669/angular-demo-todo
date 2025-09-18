@@ -1,9 +1,8 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
-import { ITodoItem } from './todo-list/todo-item/todo-item.model';
-
+import { TodoService } from './todo.service';
 @Component({
   selector: 'app-root',
   imports: [HeaderComponent, TodoListComponent, AddTodoComponent],
@@ -11,22 +10,7 @@ import { ITodoItem } from './todo-list/todo-item/todo-item.model';
   styleUrl: './app.css',
 })
 export class App {
-  todoList = signal<ITodoItem[]>([]);
-  todoListCount = computed(() => this.todoList().length);
-  
-  onAddTodo(task: ITodoItem) {
-    this.todoList.update((list: ITodoItem[]) => [...list, task]);
-  }
-  
-  onDeleteTodo(id: number) {
-    this.todoList.update((list: ITodoItem[]) => list.filter(task => task.id !== id));
-  }
-  
-  onToggleTodo(id: number) {
-    this.todoList.update((list: ITodoItem[]) => 
-      list.map(task => 
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
-  }
+  todoService = inject(TodoService);
+  todoListCount = this.todoService.todoListCount;
+  todoListCompletedCount = this.todoService.todoListCompletedCount;
 }
